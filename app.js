@@ -1,5 +1,5 @@
 let listaDeNumerosSorteados = [];
-let numeroLimite = 30;
+let numeroLimite = 50;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
@@ -11,7 +11,7 @@ function exibirTextoNaTela(tag, texto) {
 
 function exibirMensagemInicial() {
     exibirTextoNaTela('h1', 'Secret Number Game!');
-    exibirTextoNaTela('p', 'Choose a number from 1 to 100');
+    exibirTextoNaTela('p', 'Choose a number from 1 to 50');
 }
 
 exibirMensagemInicial();
@@ -22,7 +22,7 @@ function verificarChute() {
     if (chute == numeroSecreto) {
         exibirTextoNaTela('h1', 'You got it right!');
         let palavraTentativa = tentativas > 1 ? 'attempts' : 'attempt';
-        let mensagemTentativas = `You discovered the secret number with ${tentativas} ${palavraTentativa}!`;
+        let mensagemTentativas = `You discovered the secret number with ${tentativas} ${palavraTentativa}, good job!`;
         exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
